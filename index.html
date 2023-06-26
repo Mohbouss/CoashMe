@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoashMe</title>
+    <style>
+        
+    </style>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+     <div id="login-page" >
+        <div class="form-1">
+          <h1>Login</h1>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required />
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" required />
+          <button id="login">Login</button>
+        </div>  
+    </div>
+    <div id="page1" class="hidden"  >
+        <header class="header">CoashMe App</header>
+        <div class="inputField">
+            <input type="text" id="add-user-input" placeholder="Add new User" >
+            <input size="1" type="email" id="add-email-input" placeholder="the email" >
+            <input type="password" id="add-password-input" placeholder="Write the user pass" >
+            <button type="button" id="add-user-btn"><i class="fa-solid fa-plus"></i></button>
+        </div >
+        <div id="user-container"></div>
+    </div>
+    <div id="page2" class="hidden">
+        <header class="header"></header>
+        <div class="inputField">
+            <input type="text" id="add-exercice-input" placeholder="Add  new Exercice">
+            <button type="button" id="add-exercice-btn"><i class="fa-solid fa-plus"></i></button>
+            <button type="button" id="return-to-users"><i class="fa-solid fa-person-running"></i></button>
+        </div>
+        <div id="Exercice-admin-container">
+
+        </div>
+    </div>
+    <div id="page3" class="hidden"  >
+         <div id="Exercice-user-container">
+            
+         </div>
+    </div>
+</body>
+<script src="page1.js"></script>
+<script src="page2.js"></script>
+<script src="page3.js"></script>
+<script src="login.js"></script>
+</html>

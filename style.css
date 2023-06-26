@@ -1,0 +1,351 @@
+/* code for the login page */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#login-page {
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  background: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+}
+
+#login-page .form-1 {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  width: 40%;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3);
+}
+
+.form-1 h1 {
+  text-align: center;
+  margin-top: 0.7rem;
+  margin-bottom: 1.5rem;
+}
+
+input[type="email"],
+input[type="password"] {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid;
+  background: none;
+  margin: 0.9rem 2rem;
+  font-size: 1rem;
+}
+
+label {
+  margin: 0 2rem;
+}
+
+
+#login {
+  margin: 2rem;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 1rem;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: bolder;
+  color: #fff;
+  background: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+}
+
+
+
+
+ @media (max-width: 501px) {
+  html {
+    font-size: 15px;
+  }
+
+  #login-page .form-1 {
+    width: 300px;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  #login-page .form-1 {
+    width: 450px;
+  }
+}
+
+@media (min-width: 765px) and (max-width: 1200px) {
+  html {
+    font-size: 18px;
+  }
+
+  #login-page .form-1 {
+    width: 540px;
+    height: 550px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  #login-page {
+    height: 100vmax;
+  }
+} 
+/* code for other page */
+.active {
+    text-decoration: line-through;
+  }
+  
+  .hidden {
+    display: none;
+  }
+   
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  ::selection {
+    color: #ffff;
+    background: rgb(142, 73, 232);
+  }
+  
+  body {
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+    background: linear-gradient(to bottom, #68EACC 0%, #497BE8 100%);
+  }
+  header{
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+ #add-user-input,
+ #add-email-input,
+ #add-password-input{
+    background-color: #dff7e3;
+ } 
+.inputField button:hover {
+  background: #721ce3;
+}
+
+.inputField button.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+  
+  .page1 {
+    background: #fff;
+    max-width: 400px;
+    width: 100%;
+    margin: 120px auto;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .page1 .inputField {
+    margin: 20px 0px;
+    width: 100%;
+    display: flex;
+    height: 45px;
+  }
+  
+  .inputField input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    font-size: 17px;
+    padding: 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .inputField input:focus {
+    border-color: #8E49E8;
+  }
+  
+  .page1 {
+    max-height: 250px;
+    overflow-y: auto;
+  }
+  
+  #user-container {
+    margin-top: 20px;
+  }
+  
+  #user-container li {
+    position: relative;
+    list-style: none;
+    height: 45px;
+    line-height: 45px;
+    margin-bottom: 8px;
+    background: #dff7e3;
+    border-radius: 3px;
+    padding: 0 15px;
+    cursor: default;
+    overflow: hidden;
+  }
+  
+  #user-container li .delete-button {
+    position: absolute;
+    right: -45px;
+    background: #e74c3c;
+    width: 45px;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  #user-container li:hover .delete-button {
+    right: 0px;
+  }
+  
+  .page2 {
+    background: #fff;
+    max-width: 400px;
+    width: 100%;
+    margin: 120px auto;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .page2 .inputField {
+    margin: 20px 0px;
+    width: 100%;
+    display: flex;
+    height: 45px;
+  }
+  
+  .inputField input {
+    width: 25%;
+    height: 100%;
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    font-size: 17px;
+    padding-left: 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .inputField input:focus {
+    border-color: #8E49E8;
+  }
+  
+  .page2 {
+    max-height: 250px;
+    overflow-y: auto;
+  }
+  
+  #Exercice-admin-container {
+    margin-top: 20px;
+  }
+  
+  #Exercice-admin-container li {
+    position: relative;
+    list-style: none;
+    height: 45px;
+    line-height: 45px;
+    margin-bottom: 8px;
+    background: #f2f2f2;
+    border-radius: 3px;
+    padding: 0 15px;
+    cursor: default;
+    overflow: hidden;
+  }
+  
+  #Exercice-admin-container li .delete-button {
+    position: absolute;
+    right: -45px;
+    background: #e74c3c;
+    width: 45px;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  #Exercice-admin-container li:hover .delete-button {
+    right: 0px;
+  }
+  .inputField button {
+    width: 50px;
+    padding-top: 10px;
+    height: 50px;
+    border: none;
+    color: #fff;
+    margin-left: 5px;
+    font-size: 21px;
+    outline: none;
+    background: #8E49E8;
+    cursor: pointer;
+    border-radius: 3px;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+  }
+  
+.inputField button:hover {
+    background: #721ce3;
+  }
+  
+  .inputField button.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .page3 {
+    max-height: 250px;
+    overflow-y: auto;
+  }
+  
+  #Exercice-user-container {
+    margin-top: 20px;
+  }
+  
+  #Exercice-user-container li {
+    position: relative;
+    list-style: none;
+    height: 45px;
+    line-height: 45px;
+    margin-bottom: 8px;
+    background: #f2f2f2;
+    border-radius: 3px;
+    padding: 0 15px;
+    cursor: default;
+    overflow: hidden;
+  }
+  
+  #Exercice-user-container li .delete-button {
+    position: absolute;
+    right: -45px;
+    background: #e74c3c;
+    width: 45px;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  #Exercice-user-container li:hover .delete-button {
+    right: 0px;
+  }
+ 
