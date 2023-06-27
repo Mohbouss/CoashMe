@@ -41,9 +41,7 @@ function addUser(){
   let userName = AddUserInput.value.trim();
   let userEmail = AddEmailInput.value.trim();
   let userPass = AddPassInput.value.trim();
-  console.log(userEmail)
-  console.log(userPass)
-  console.log("button")
+
   if (userName !== '') {
     fetch('http://localhost:8000/users', {
       method: 'POST',
@@ -59,7 +57,6 @@ function addUser(){
     })
     .then(response => response.json())
     .then(newUser => {
-      console.log('Button clicked!')
       showUsers();
       AddUserInput.value = '';
       AddPassInput.value = '';

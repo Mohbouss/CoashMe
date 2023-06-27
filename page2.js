@@ -20,7 +20,7 @@ function showExercice() {
         .then(Exercices => {
           Exercices.forEach(Exercice => {
             let ExerciceElement = CreateMyElement('li');
-            let ExerciceContent = CreateMyElement('span', Exercice.name, 'Exercice-box');
+            let ExerciceContent = CreateMyElement('span', Exercice.name, 'exercice-box');
             let deleteButton = CreateMyElement('button', 'Delete', 'delete-button');
             deleteButton.addEventListener('click', () => deleteExercice(Exercice.id));
             deleteButton.innerHTML = "<i class='fa-solid fa-trash'></i>";

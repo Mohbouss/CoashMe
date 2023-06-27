@@ -1,9 +1,5 @@
 /* code for the login page */
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 
 #login-page {
   height: 100vh;
@@ -288,7 +284,6 @@ label {
   }
   .inputField button {
     width: 50px;
-    padding-top: 10px;
     height: 50px;
     border: none;
     color: #fff;
@@ -315,11 +310,11 @@ label {
     overflow-y: auto;
   }
   
-  #Exercice-user-container {
+  #exercice-user-container {
     margin-top: 20px;
   }
   
-  #Exercice-user-container li {
+  #exercice-user-container li {
     position: relative;
     list-style: none;
     height: 45px;
@@ -332,7 +327,7 @@ label {
     overflow: hidden;
   }
   
-  #Exercice-user-container li .delete-button {
+  #exercice-user-container li .delete-button {
     position: absolute;
     right: -45px;
     background: #e74c3c;
@@ -345,7 +340,7 @@ label {
     transition: all 0.2s ease;
   }
   
-  #Exercice-user-container li:hover .delete-button {
+  #exercice-user-container li:hover .delete-button {
     right: 0px;
   }
  
