@@ -22,6 +22,7 @@ function showExercice() {
             let ExerciceElement = CreateMyElement('li');
             let ExerciceContent = CreateMyElement('span', Exercice.name, 'exercice-box');
             let deleteButton = CreateMyElement('button', 'Delete', 'delete-button');
+            Exercice.state ? ExerciceElement.style.background = 'green':ExerciceElement.style.background==='rgb(255, 255, 255)'
             deleteButton.addEventListener('click', () => deleteExercice(Exercice.id));
             deleteButton.innerHTML = "<i class='fa-solid fa-trash'></i>";
       

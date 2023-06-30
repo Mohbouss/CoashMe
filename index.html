@@ -18,10 +18,11 @@
           <label for="password">Password</label>
           <input type="password" name="password" id="password" required />
           <button id="login">Login</button>
-        </div>  
+        </div>   
     </div>
-    <div id="page1" class="hidden"  >
+    <div id="page1"  class="hidden" >
         <header class="header">CoashMe App</header>
+        <button type="button" class="logout">logout</button>
         <div class="inputField">
             <input type="text" id="add-user-input" placeholder="Add new User" >
             <input size="1" type="email" id="add-email-input" placeholder="the email" >
@@ -32,10 +33,12 @@
     </div>
     <div id="page2" class="hidden">
         <header class="header"></header>
+        <button type="button" class="logout">logout</button>
         <div class="inputField">
             <input type="text" id="add-exercice-input" placeholder="Add  new Exercice">
             <button type="button" id="add-exercice-btn"><i class="fa-solid fa-plus"></i></button>
             <button type="button" id="return-to-users"><i class="fa-solid fa-person-running"></i></button>
+      
         </div>
         <div id="Exercice-admin-container">
 
@@ -43,9 +46,10 @@
     </div>
     <div id="page3" class="hidden"  >
          <div id="exercice-user-container">
-            
+            <button type="button" class="logout">logout</button>  
          </div>
     </div>
+    
 </body>
 <script src="page1.js"></script>
 <script src="page2.js"></script>

@@ -3,8 +3,14 @@ let UserListContainer = document.getElementById('user-container');
 let AddEmailInput =document.getElementById("add-email-input")
 let AddPassInput =document.getElementById("add-password-input")
 document.getElementById('add-user-btn').addEventListener("click",addUser);
+document.querySelectorAll('.logout').forEach(el => {
+  el.addEventListener('click',function (e) {
+     location.reload();
+  });
+});
 let header = document.querySelector('#page2 header');
 let activeUser = null;
+
 
 function CreateMyElement(tagName, textContent = "", className = "") {
   let element = document.createElement(tagName);

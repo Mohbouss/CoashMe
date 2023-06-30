@@ -23,7 +23,7 @@ function login(){
         let page3 = document.querySelector('#page3');
         let LoginPage = document.querySelector('#login-page')
         
-         header.textContent = newuser.name
+         
        if (newuser.role == "coach")
         {
             page1.classList.remove('hidden');
@@ -45,3 +45,4 @@ function login(){
       });
     }
   }
+

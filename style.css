@@ -296,7 +296,23 @@ label {
     opacity: 0.6;
     transition: all 0.3s ease;
   }
-  
+  .logout{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border: none;
+    top:0;
+    right: 0px;
+    color: #fff;
+    margin-left: 5px;
+    font-size: 21px;
+    outline: none;
+    background: #8E49E8;
+    cursor: pointer;
+    border-radius: 3px;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+  }
 .inputField button:hover {
     background: #721ce3;
   }
@@ -311,7 +327,7 @@ label {
   }
   
   #exercice-user-container {
-    margin-top: 20px;
+    margin-top: 100px;
   }
   
   #exercice-user-container li {
@@ -343,4 +359,16 @@ label {
   #exercice-user-container li:hover .delete-button {
     right: 0px;
   }
- 
+  .check-box {
+    position: absolute;
+    right: 0px;
+    width: 45px;
+    height: 100%;
+
+    
+   
+
+
+
+
+  }
