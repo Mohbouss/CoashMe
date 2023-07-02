@@ -21,7 +21,7 @@ function showExerciseUser(id) {
 
 function tskdone(ExerciceElement,id){
   if (ExerciceElement.style.background == 'rgb(242, 242, 242)') {
-    ExerciceElement.style.background = 'green';
+    ExerciceElement.style.background = 'rgb(50, 205, 50)';
     update(true,id)
   } else {
     ExerciceElement.style.background = 'rgb(242, 242, 242)';
@@ -30,7 +30,7 @@ function tskdone(ExerciceElement,id){
 }
 function update(state,id)
 {
-  fetch(`http://localhost:8000/exercice/${id}`, {
+  fetch(`http://localhost:8000/exercices/${id}`, {
   method: 'PUT',
   headers: {
     'Content-Type': 'application/json'
@@ -41,7 +41,7 @@ function update(state,id)
 })
 .then(response => response.json())
 .then(newstate => {
-  console.log(newstate)
+
 })
 .catch(error => {
   console.error(error);

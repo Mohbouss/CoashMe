@@ -14,7 +14,7 @@ function CreateMyElement(tagName, textContent = "", className = "") {
 
 function showExercice() {
     ExerciceListContainer.innerHTML = '';
-    if (activeUser) {
+   
       fetch(`http://localhost:8000/exercices/${activeUser.id}`)
         .then(response => response.json())
         .then(Exercices => {
@@ -22,7 +22,7 @@ function showExercice() {
             let ExerciceElement = CreateMyElement('li');
             let ExerciceContent = CreateMyElement('span', Exercice.name, 'exercice-box');
             let deleteButton = CreateMyElement('button', 'Delete', 'delete-button');
-            Exercice.state ? ExerciceElement.style.background = 'green':ExerciceElement.style.background==='rgb(255, 255, 255)'
+            Exercice.state ? ExerciceElement.style.background = 'rgb(50, 205, 50)':ExerciceElement.style.background==='rgb(255, 255, 255)'
             deleteButton.addEventListener('click', () => deleteExercice(Exercice.id));
             deleteButton.innerHTML = "<i class='fa-solid fa-trash'></i>";
       
@@ -36,14 +36,14 @@ function showExercice() {
         .catch(error => {
           console.error(error);
         });
-    }
+    
   }
   
   function addExercice() {
     let ExerciceDescription = addExerciceInput.value.trim();
 
     if (ExerciceDescription !== '' && activeUser) {
-      fetch('http://localhost:8000/exercice', {
+      fetch('http://localhost:8000/exercices', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -64,8 +64,9 @@ function showExercice() {
     }
   }
   
+  
   function deleteExercice(ExerciceId) {
-    fetch(`http://localhost:8000/exercice/${ExerciceId}`, {
+    fetch(`http://localhost:8000/exercices/${ExerciceId}`, {
       method: 'DELETE'
     })
     .then(response => {
@@ -80,6 +81,7 @@ function showExercice() {
     });
   }
   
+
   function returnToUsers() {
     activeUser = null;
     let page1 = document.querySelector('#page1');
