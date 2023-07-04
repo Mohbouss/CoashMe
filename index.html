@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CoashMe</title>
+    <script src="https://kit.fontawesome.com/d7b2def362.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <div  id="login-page" >
+    <div action="" class="form-1" >
+      <h1 class="title">Sign in</h1>
+      <div class="inputContainer" >
+      
+        <input type="text" class="email-input" id="email" placeholder="a" required autofocus>
+      
+        <label for="signup-email-input" class="login-label">Email</label>
+      </div>
+      <div class="inputContainer">
+        <input type="password" id="password" class="password-input" placeholder="a" required>
+        <label for="signup-password-input" class="login-label">Password</label>
+      </div>
+
+      <div class="text-center mt-3">
+    <button id="login" class=" btn btn-primary btn-lg">Sign in</button>
+    <p>Not a member? <a href="#!" id="signup">Register</a></p>
+        </div>
+    
+    </div>
+  </div> 
+
+     <div  id="signup-page" class="hidden">
+        <div action="" class="form" >
+          <h1 class="title">Sign up</h1>
+          <div class="inputContainer">
+            <input type="text" class="username-input" id="signup-coachname-input" placeholder="a">
+            <label for="signup-coacheename-input" class="signup-label">Username</label>
+            
+          </div> 
+          <div class="inputContainer" >
+          
+            <input type="text" class="email-input" id="signup-email-input" placeholder="a">
+          
+            <label for="signup-email-input" class="signup-label">Email</label>
+          </div>
+          <div class="inputContainer">
+            <input type="text" id="signup-password-input" class="password-input" placeholder="a">
+            <label for="signup-password-input" class="signup-label">Password</label>
+          </div>
+          <div class="text-center mt-4">
+        <button id ='second-signup'  class=" btn btn-primary btn-lg"> Submit</button>
+      </div>
+      </div>
+      </div> 
+
+    <div id="page1"  class="hidden" >
+        <header class="header">CoashMe App</header>
+        <button type="button" class="logout">logout</button>
+       
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Add New Coachee
+  </button>
+  
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Create New Coashee</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+            </div>
+                <div class="modal-body">
+                <div class="form-group col-md-12">
+                   
+                    <div class="form-group">
+                        <label for="add-user-input">Username</label>
+                        <input type="text" class="form-control" id="add-user-input" placeholder="Username" >
+                    </div > 
+                   
+                    <div class="form-group">
+                        <label for="add-email-input">Email address</label>
+                        <input  type="email" class="form-control" id="add-email-input" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div >
+                   
+                    <div class="form-group">
+                        <label for="add-password-input">Password</label>
+                        <input  type="email" class="form-control" id="add-password-input" placeholder="Password">
+                    </div >  
+                </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                     <button type="button" class="btn btn-primary" id="add-user-btn">Save changes</button>
+                </div>
+            </div>
+        </div>
+  </div>
+        <div id="user-container"></div>
+    </div>
+   
+   
+   
+    <div id="page2" class="hidden">
+        <header class="header"></header>
+        <button type="button" class="logout">logout</button>
+        <div class="inputField">
+            <input type="text" id="add-exercice-input" placeholder="Add  new Exercice">
+            <button type="button" id="add-exercice-btn"><i class="fa-solid fa-plus"></i></button>
+            <button type="button" id="return-to-users"><i class="fa-solid fa-person-running"></i></button>
+      
+        </div>
+        <div id="Exercice-admin-container">
+
+        </div>
+    </div>
+    <div id="page3" class="hidden"  >
+         <div id="exercice-user-container">
+            <button type="button" class="logout">logout</button>  
+         </div>
+    </div>
+    
+</body>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="page1.js"></script>
+<script src="page2.js"></script>
+<script src="page3.js"></script>
+<script src="login.js"></script>
+</html>

@@ -1,0 +1,472 @@
+/* code for the login page */
+
+
+#login-page,#signup-page {
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  background: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+}
+
+#login-page .form-1 {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  width: 40%;
+  box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+  width: 40%;
+  padding: 20px 40px;
+  background-color: white;
+}
+#signup-page .form{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  width: 40%;
+  box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+  width: 40%;
+  padding: 20px 40px;
+  background-color: white;
+
+ 
+}
+
+.form-1 h1 ,.form{
+  text-align: center;
+  margin-top: 0.7rem;
+  margin-bottom: 1.5rem;
+}
+.phrase{
+  text-align: center;
+  margin-top: 0.7rem;
+  margin-bottom: 1.5rem;
+  padding-top: 25%;
+  color: #fa4f4fcf;
+}
+
+
+
+
+
+ @media (max-width: 501px) {
+  html {
+    font-size: 15px;
+  }
+
+  #login-page .form-1,#signup-page .form {
+    width: 300px;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  #login-page .form-1 ,#signup-page .form{
+    width: 450px;
+  }
+}
+
+@media (min-width: 765px) and (max-width: 1200px) {
+  html {
+    font-size: 18px;
+  }
+
+  #login-page .form-1,#signup-page .form {
+    width: 540px;
+    height: 550px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  #login-page ,#signup-page {
+    height: 100vmax;
+  }
+} 
+
+
+/* sign up */
+
+  
+/* #signup-page{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh
+}
+.form {
+
+}
+ */
+.title {
+  font-size: 50px;
+  margin-bottom: 50px;
+}
+.inputContainer {
+  position: relative;
+  height: 45px;
+  width: 90%;
+  margin-bottom: 17px;
+}
+/* Style the inputs */
+
+.email-input,.password-input,.username-input{
+position: absolute;
+top: 0px;
+left: 0px;
+height: 100%;
+width: 100%;
+border: 1px solid #DADCE0;
+border-radius: 7px;
+font-size: 16px;
+padding: 0 20px;
+outline: none;
+background: none;
+z-index: 1;
+}
+
+/* Hide the placeholder texts (a) */
+
+::placeholder {
+color: transparent;
+}
+
+.signup-label,.login-label{
+position: absolute;
+top: 15px;
+left: 15px;
+padding: 0 4px;
+background-color: white;
+color: #DADCE0;
+font-size: 16px;
+transition: 0.5s;
+z-index: 0;
+}
+/* #second-signup{
+display: block;
+margin-left: auto;
+padding: 15px 30px;
+border: none;
+color: white;
+border-radius: 6px;
+cursor: pointer;
+font-size: 16px;
+margin-top: 30px;
+} */
+
+.btn-primary:hover {
+transform: translateY(-2px);
+}
+.email-input:focus+ .signup-label ,.password-input:focus+ .signup-label ,.username-input:focus + .signup-label ,
+.email-input:focus+ .login-label ,.password-input:focus+ .login-label {
+top: -7px;
+left: 3px;
+z-index: 10;
+font-size: 14px;
+font-weight: 600;
+color: #007bff;
+}
+
+.email-input:focus,.password-input:focus,.username-input:focus {
+border: 2px solid #007bff9d;
+}
+.email-input:not(:placeholder-shown)+ .signup-label,.password-input:not(:placeholder-shown)+ .signup-label,.username-input:not(:placeholder-shown)+ .signup-label,
+.email-input:not(:placeholder-shown)+ .login-label,.password-input:not(:placeholder-shown)+ .login-label {
+top: -7px;
+left: 3px;
+z-index: 10;
+font-size: 14px;
+font-weight: 600;
+}
+
+
+
+
+
+/* code for other page */
+
+.active {
+    text-decoration: line-through;
+  }
+  
+  .hidden {
+    display: none;
+  }
+   
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  ::selection {
+    color: #ffff;
+    background: rgb(142, 73, 232);
+  }
+  
+  body {
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+/*     background: linear-gradient(to bottom, #68EACC 0%, #497BE8 100%);
+   */}
+  header{
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+/*  #add-user-input,
+ #add-email-input,
+ #add-password-input{
+    background-color: #dff7e3; 
+ } */
+.inputField button:hover {
+  background: #721ce3;
+}
+
+.inputField button.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+  
+  .page1 {
+    background: #fff;
+    max-width: 400px;
+    width: 100%;
+    margin: 120px auto;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .page1 .inputField {
+    margin: 20px 0px;
+    width: 100%;
+    display: flex;
+    height: 45px;
+  }
+  
+  .inputField input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    font-size: 17px;
+    padding: 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .inputField input:focus {
+    border-color: #8E49E8;
+  }
+  
+  .page1 {
+    max-height: 250px;
+    overflow-y: auto;
+  }
+  
+  #user-container {
+    margin-top: 20px;
+  }
+  
+  #user-container li {
+    position: relative;
+    list-style: none;
+    height: 45px;
+    line-height: 45px;
+    margin-bottom: 8px;
+    background: rgb(242,242,242);
+    border-radius: 3px;
+    padding: 0 15px;
+    cursor: default;
+    overflow: hidden;
+  }
+  
+  #user-container li .delete-button {
+    position: absolute;
+    right: -45px;
+    background: #e74c3c;
+    width: 45px;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  #user-container li:hover .delete-button {
+    right: 0px;
+  }
+  
+  .page2 {
+    background: #fff;
+    max-width: 400px;
+    width: 100%;
+    margin: 120px auto;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .page2 .inputField {
+    margin: 20px 0px;
+    width: 100%;
+    display: flex;
+    height: 45px;
+  }
+  
+  .inputField input {
+    width: 25%;
+    height: 100%;
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    font-size: 17px;
+    padding-left: 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .inputField input:focus {
+    border-color: #8E49E8;
+  }
+  
+  .page2 {
+    max-height: 250px;
+    overflow-y: auto;
+  }
+  
+  #Exercice-admin-container {
+    margin-top: 20px;
+  }
+  
+  #Exercice-admin-container li {
+    position: relative;
+    list-style: none;
+    height: 45px;
+    line-height: 45px;
+    margin-bottom: 8px;
+    border-radius: 3px;
+    padding: 0 15px;
+    cursor: default;
+    overflow: hidden;
+  }
+  
+  #Exercice-admin-container li .delete-button {
+    position: absolute;
+    right: -45px;
+    background: #e74c3c;
+    width: 45px;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  #Exercice-admin-container li:hover .delete-button {
+    right: 0px;
+  }
+  .inputField button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    color: #fff;
+    margin-left: 5px;
+    font-size: 21px;
+    outline: none;
+    background: #8E49E8;
+    cursor: pointer;
+    border-radius: 3px;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+  }
+  .logout{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border: none;
+    top:0;
+    right: 0px;
+    color: #fff;
+    margin-left: 5px;
+    font-size: 21px;
+    outline: none;
+    background: #8E49E8;
+    cursor: pointer;
+    border-radius: 3px;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+  }
+.inputField button:hover {
+    background: #721ce3;
+  }
+  
+  .inputField button.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .page3 {
+    max-height: 250px;
+    overflow-y: auto;
+  }
+  
+  #exercice-user-container {
+    margin-top: 100px;
+  }
+  
+  #exercice-user-container li {
+    position: relative;
+    list-style: none;
+    height: 45px;
+    line-height: 45px;
+    margin-bottom: 8px;
+ 
+    border-radius: 3px;
+    padding: 0 15px;
+    cursor: default;
+    overflow: hidden;
+  }
+  
+  #exercice-user-container li .delete-button {
+    position: absolute;
+    right: -45px;
+    background: #e74c3c;
+    width: 45px;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  #exercice-user-container li:hover .delete-button {
+    right: 0px;
+  }
+  .check-box {
+    position: absolute;
+    right: 0px;
+    width: 45px;
+    height: 100%;
+  }
+  .incompleted{
+    background-color: rgb(242,242,242);
+  }
+  .completed{
+    background-color:#dff7e3;
+  }
