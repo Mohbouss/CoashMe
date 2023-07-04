@@ -22,7 +22,7 @@ function showExercice() {
             let ExerciceElement = CreateMyElement('li');
             let ExerciceContent = CreateMyElement('span', Exercice.name, 'exercice-box');
             let deleteButton = CreateMyElement('button', 'Delete', 'delete-button');
-            Exercice.state ? ExerciceElement.style.background = 'rgb(50, 205, 50)':ExerciceElement.style.background==='rgb(255, 255, 255)'
+            Exercice.state ?ExerciceElement.classList.add('completed'):ExerciceElement.classList.add('incompleted')
             deleteButton.addEventListener('click', () => deleteExercice(Exercice.id));
             deleteButton.innerHTML = "<i class='fa-solid fa-trash'></i>";
       
@@ -64,7 +64,7 @@ function showExercice() {
     }
   }
   
-  
+
   function deleteExercice(ExerciceId) {
     fetch(`http://localhost:8000/exercices/${ExerciceId}`, {
       method: 'DELETE'

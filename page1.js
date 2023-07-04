@@ -30,7 +30,7 @@ function CreateMyElement(tagName, textContent = "", className = "") {
 function showUsers() {
   UserListContainer.innerHTML = '';
 
-  fetch(`http://localhost:8000/coachees/${currentUser.id}`)
+  fetch(`http://localhost:8000/users/${currentUser.id}`)
     .then(response => response.json())
   
     .then(users => {
@@ -65,7 +65,7 @@ function addUser(){
   let userPass = AddPassInput.value.trim();
 
   if (userName !== '') {
-    fetch('http://localhost:8000/coachees', {
+    fetch('http://localhost:8000/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -74,11 +74,15 @@ function addUser(){
         "name": userName,  
         "email": userEmail,
         "password": userPass,
+        "role":"coachee",
         "coachId":currentUser.id
       })
     })
     .then(response => response.json())
     .then(newUser => {
+      if (newUser.message){
+        window.alert('this user already exist')
+        UserListContainer.appendChild(phrase)}
       showUsers();
       AddUserInput.value = '';
       AddPassInput.value = '';
@@ -90,7 +94,7 @@ function addUser(){
   }
 }
 function deleteUser(userId) {
-  fetch(`http://localhost:8000/coachees/${userId}`, {
+  fetch(`http://localhost:8000/users/${userId}`, {
     method: 'DELETE'
   })
   .then(response => {
@@ -109,10 +113,10 @@ function deleteUser(userId) {
   });
 }
 function toggleDivs(userId) {
-  fetch(`http://localhost:8000/coachee/${userId}`)
+  fetch(`http://localhost:8000/user/${userId}`)
     .then(response => response.json())
     .then(user => {
-      console.log(user)
+    
       activeUser = user;
       
    

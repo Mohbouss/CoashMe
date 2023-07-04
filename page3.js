@@ -7,7 +7,7 @@ function showExerciseUser(id) {
           Exercices.forEach(Exercice => {
             let ExerciceElement = CreateMyElement("li");
             let ExerciceContent = CreateMyElement('span', Exercice.name, 'exercice-box');
-            Exercice.state ? ExerciceElement.style.background = 'green':ExerciceElement.style.background='rgb(242,242,242)'
+            Exercice.state ? ExerciceElement.classList.add('completed'):ExerciceElement.classList.add('incompleted')
             ExerciceElement.addEventListener('click', () => tskdone(ExerciceElement,Exercice.id)) 
             ExerciceElement.appendChild(ExerciceContent);
            SecondExerciceListContainer.appendChild(ExerciceElement);
@@ -20,11 +20,13 @@ function showExerciseUser(id) {
     }
 
 function tskdone(ExerciceElement,id){
-  if (ExerciceElement.style.background == 'rgb(242, 242, 242)') {
-    ExerciceElement.style.background = 'rgb(50, 205, 50)';
+  if (ExerciceElement.classList.contains('incompleted')) {
+    ExerciceElement.classList.remove('incompleted')
+    ExerciceElement.classList.add('completed');
     update(true,id)
   } else {
-    ExerciceElement.style.background = 'rgb(242, 242, 242)';
+    ExerciceElement.classList.remove("completed")
+    ExerciceElement.classList.add('incompleted');
     update(false,id)
   }
 }

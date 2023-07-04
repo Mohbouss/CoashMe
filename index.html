@@ -10,37 +10,52 @@
 
 </head>
 <body>
+  <div  id="login-page" >
+    <div action="" class="form-1" >
+      <h1 class="title">Sign in</h1>
+      <div class="inputContainer" >
+      
+        <input type="text" class="email-input" id="email" placeholder="a" required autofocus>
+      
+        <label for="signup-email-input" class="login-label">Email</label>
+      </div>
+      <div class="inputContainer">
+        <input type="password" id="password" class="password-input" placeholder="a" required>
+        <label for="signup-password-input" class="login-label">Password</label>
+      </div>
 
-     <div id="login-page"    >
-        <div class="form-1">
-          <h1>Login</h1>
-          <label for="email" class="login-label">Email</label>
-          <input type="email" name="email" id="email" required autofocus/>
-          <label for="password" class="login-label">Password</label>
-          <input type="password" name="password" id="password" required />
-          <button id="login">Login</button>
-          <button id="signup">Sign Up</button>
-        </div>   
+      <div class="text-center mt-3">
+    <button id="login" class=" btn btn-primary btn-lg">Sign in</button>
+    <p>Not a member? <a href="#!" id="signup">Register</a></p>
+        </div>
+    
     </div>
-    <div  id="signup-page" class="hidden">
+  </div> 
+
+     <div  id="signup-page" class="hidden">
         <div action="" class="form" >
           <h1 class="title">Sign up</h1>
           <div class="inputContainer">
-            <input type="text" class="username-input" placeholder="a">
-            <label for="" class="signup-label">Username</label>
-          </div>  
-          <div class="inputContainer">
-            <input type="text" class="email-input" placeholder="a">
-            <label for="" class="signup-label">Email</label>
+            <input type="text" class="username-input" id="signup-coachname-input" placeholder="a">
+            <label for="signup-coacheename-input" class="signup-label">Username</label>
+            
+          </div> 
+          <div class="inputContainer" >
+          
+            <input type="text" class="email-input" id="signup-email-input" placeholder="a">
+          
+            <label for="signup-email-input" class="signup-label">Email</label>
           </div>
           <div class="inputContainer">
-            <input type="text" class="password-input" placeholder="a">
-            <label for="" class="signup-label">Password</label>
+            <input type="text" id="signup-password-input" class="password-input" placeholder="a">
+            <label for="signup-password-input" class="signup-label">Password</label>
           </div>
-        <button class="submitBtn" >Sign Up</button>
-        </div>
+          <div class="text-center mt-4">
+        <button id ='second-signup'  class=" btn btn-primary btn-lg"> Submit</button>
       </div>
-      
+      </div>
+      </div> 
+
     <div id="page1"  class="hidden" >
         <header class="header">CoashMe App</header>
         <button type="button" class="logout">logout</button>

@@ -1,7 +1,7 @@
 /* signup input declaration */
 let SIgnUpUsernameInput =document.querySelector(".username-input")
-let SIgnUpEmailInput =document.querySelector(".email-input")
-let SIgnUpPassInput =document.querySelector(".password-input")
+let SIgnUpEmailInput =document.querySelector("#signup-email-input")
+let SIgnUpPassInput =document.querySelector("#signup-password-input")
 
 /* login input declaration */
 let EmailInput=document.getElementById("email")
@@ -13,7 +13,7 @@ let signUpPage = document.querySelector("#signup-page")
 let LoginButton= document.querySelector('#login').addEventListener("click",login)
 let sigUpButton=document.querySelector("#signup").addEventListener('click',() => toggleToSignUpPage()) 
 /* button in the signup page */
-let mainSignUpButton = document.querySelector(".submitBtn").addEventListener('click',()=> signup())
+let mainSignUpButton = document.querySelector("#second-signup").addEventListener('click',()=> signup())
 
 function toggleToSignUpPage(){
 loginPage.classList.add('hidden')
@@ -39,23 +39,23 @@ function login(){
         })
       })
       .then(response => response.json())
-      .then(newuser => {
+      .then(newUser => {
         let page1 = document.querySelector('#page1');
         let page3 = document.querySelector('#page3');
         
         
          
-       if (newuser.role == "coach")
+       if (newUser.role == "coach")
         {
             page1.classList.remove('hidden');
             loginPage.classList.add("hidden")
-            currentUser = newuser
+            currentUser = newUser
             showUsers()
         
         }
-        else if(newuser.role=="coachee"){
+        else if(newUser.role=="coachee"){
             page3.classList.remove('hidden');
-            showExerciseUser(newuser.id)
+            showExerciseUser(newUser.id)
             loginPage.classList.add("hidden")
         } 
         else {
@@ -74,11 +74,12 @@ function login(){
 /* signup function */
 function signup(){
   let userName =SIgnUpUsernameInput.value.trim();
-  let userEmail = SIgnUpEmailInput.value.trim();
-  let userPass = SIgnUpPassInput.value.trim();
+  let userEmail=SIgnUpEmailInput.value.trim();
+  let userPass =SIgnUpPassInput.value.trim();
+
 
   if (userName !== '') {
-    fetch('http://localhost:8000/coachs', {
+    fetch('http://localhost:8000/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -86,22 +87,41 @@ function signup(){
       body: JSON.stringify({
         "name": userName,  
         "email": userEmail,
-        "password": userPass,
+        "password":userPass,
+        "role" : "coach"
       })
     })
-    .then(response => response.json())
+    .then(response => {
+      if (response.status === 401) {
+        throw new Error('Unauthorized');
+ 
+
+      }
+      SIgnUpEmailInput.value = '';
+      SIgnUpPassInput.value = '';
+      SIgnUpUsernameInput.value = '';
+      return response.json();
+    })
     .then(newUser => {
-     
-      loginPage.classList.remove('hidden') 
-      signUpPage.classList.add('hidden')
-      
-      AddUserInput.value = '';
-      AddPassInput.value = '';
-      AddEmailInput.value = '';
+      SIgnUpEmailInput.value = '';
+      SIgnUpPassInput.value = '';
+      SIgnUpUsernameInput.value = '';
+      if (newUser.message) {
+        // Handle the error message
+      } else {
+        page1.classList.remove('hidden');
+        signUpPage.classList.add("hidden");
+        currentUser = newUser;
+        showUsers();
+      }
     })
     .catch(error => {
-      console.error(error);
+      if (error.message === 'Unauthorized') {
+        // Handle the unauthorized error
+        console.error('Unauthorized request');
+      } else {
+        console.error(error.message);
+      }
     });
-  }
-
+}
 }
