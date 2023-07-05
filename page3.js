@@ -1,16 +1,18 @@
 
-let SecondExerciceListContainer = document.getElementById("exercice-user-container");
+let SecondExerciseListContainer = document.getElementById("exercise-user-container");
+let pageThreeTitle = document.querySelector('#page3-title');
 function showExerciseUser(id) {
+      pageThreeTitle.innerHTML = currentUser.name;
       fetch(`http://localhost:8000/exercices/${id}`)
         .then(response => response.json())
-        .then(Exercices => {
-          Exercices.forEach(Exercice => {
-            let ExerciceElement = CreateMyElement("li");
-            let ExerciceContent = CreateMyElement('span', Exercice.name, 'exercice-box');
-            Exercice.state ? ExerciceElement.classList.add('completed'):ExerciceElement.classList.add('incompleted')
-            ExerciceElement.addEventListener('click', () => tskdone(ExerciceElement,Exercice.id)) 
-            ExerciceElement.appendChild(ExerciceContent);
-           SecondExerciceListContainer.appendChild(ExerciceElement);
+        .then(Exercises => {
+          Exercises.forEach(Exercise => {
+            let ExerciseElement = CreateMyElement("li");
+            let ExerciseContent = CreateMyElement('span', Exercise.name, 'exercise-box');
+            Exercise.state ? ExerciseElement.classList.add('completed'):ExerciseElement.classList.add('not-completed')
+            ExerciseElement.addEventListener('click', () => taskDone(ExerciseElement,Exercise.id)) 
+            ExerciseElement.appendChild(ExerciseContent);
+           SecondExerciseListContainer.appendChild(ExerciseElement);
             
           });
         })
@@ -19,14 +21,14 @@ function showExerciseUser(id) {
         });
     }
 
-function tskdone(ExerciceElement,id){
-  if (ExerciceElement.classList.contains('incompleted')) {
-    ExerciceElement.classList.remove('incompleted')
-    ExerciceElement.classList.add('completed');
+function taskDone(ExerciseElement,id){
+  if (ExerciseElement.classList.contains('not-completed')) {
+    ExerciseElement.classList.remove('not-completed')
+    ExerciseElement.classList.add('completed');
     update(true,id)
   } else {
-    ExerciceElement.classList.remove("completed")
-    ExerciceElement.classList.add('incompleted');
+    ExerciseElement.classList.remove("completed")
+    ExerciseElement.classList.add('not-completed');
     update(false,id)
   }
 }
@@ -42,7 +44,7 @@ function update(state,id)
   })
 })
 .then(response => response.json())
-.then(newstate => {
+.then(newState => {
 
 })
 .catch(error => {

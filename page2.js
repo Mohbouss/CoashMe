@@ -1,7 +1,7 @@
-let addExerciceInput = document.getElementById('add-exercice-input');
-let ExerciceListContainer = document.getElementById('Exercice-admin-container');
- document.getElementById("return-to-users").addEventListener("click",returnToUsers)
-document.getElementById('add-exercice-btn').addEventListener('click', addExercice);
+let addExerciseInput = document.getElementById('add-exercise-input');
+let ExerciseListContainer = document.getElementById('Exercise-admin-container');
+document.getElementById("return-to-users").addEventListener("click",returnToUsers)
+document.getElementById('add-exercise-btn').addEventListener('click', addExercise);
 
 function CreateMyElement(tagName, textContent = "", className = "") {
   let element = document.createElement(tagName);
@@ -12,26 +12,31 @@ function CreateMyElement(tagName, textContent = "", className = "") {
 
 
 
-function showExercice() {
-    ExerciceListContainer.innerHTML = '';
+function showExercise() {
+    ExerciseListContainer.innerHTML = '';
    
       fetch(`http://localhost:8000/exercices/${activeUser.id}`)
         .then(response => response.json())
-        .then(Exercices => {
-          Exercices.forEach(Exercice => {
-            let ExerciceElement = CreateMyElement('li');
-            let ExerciceContent = CreateMyElement('span', Exercice.name, 'exercice-box');
+        .then(Exercises => {
+          if (Exercises.length === 0) {
+            let phrase = CreateMyElement('h1',"No Exercises Found ","phrase")
+            ExerciseListContainer.appendChild(phrase)
+          }
+          else {
+          Exercises.forEach(Exercise => {
+            let ExerciseElement = CreateMyElement('li');
+            let ExerciseContent = CreateMyElement('span', Exercise.name, 'exercise-box');
             let deleteButton = CreateMyElement('button', 'Delete', 'delete-button');
-            Exercice.state ?ExerciceElement.classList.add('completed'):ExerciceElement.classList.add('incompleted')
-            deleteButton.addEventListener('click', () => deleteExercice(Exercice.id));
+            Exercise.state ?ExerciseElement.classList.add('completed'):ExerciseElement.classList.add('not-completed')
+            deleteButton.addEventListener('click', () => deleteExercise(Exercise.id));
             deleteButton.innerHTML = "<i class='fa-solid fa-trash'></i>";
       
-            ExerciceElement.appendChild(ExerciceContent);
-            ExerciceElement.appendChild(deleteButton);
+            ExerciseElement.appendChild(ExerciseContent);
+            ExerciseElement.appendChild(deleteButton);
           
-            ExerciceListContainer.appendChild(ExerciceElement);
+            ExerciseListContainer.appendChild(ExerciseElement);
       
-          });
+          })};
         })
         .catch(error => {
           console.error(error);
@@ -39,24 +44,24 @@ function showExercice() {
     
   }
   
-  function addExercice() {
-    let ExerciceDescription = addExerciceInput.value.trim();
+  function addExercise() {
+    let ExerciseDescription = addExerciseInput.value.trim();
 
-    if (ExerciceDescription !== '' && activeUser) {
+    if (ExerciseDescription !== '' && activeUser) {
       fetch('http://localhost:8000/exercices', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          "name": ExerciceDescription,
+          "name": ExerciseDescription,
           "userid": activeUser.id
         })
       })
       .then(response => response.json())
-      .then(newExercice => {
-        showExercice();
-        addExerciceInput.value = '';
+      .then(newExercise => {
+        showExercise();
+        addExerciseInput.value = '';
       })
       .catch(error => {
         console.error(error);
@@ -65,15 +70,15 @@ function showExercice() {
   }
   
 
-  function deleteExercice(ExerciceId) {
-    fetch(`http://localhost:8000/exercices/${ExerciceId}`, {
+  function deleteExercise(ExerciseId) {
+    fetch(`http://localhost:8000/exercices/${ExerciseId}`, {
       method: 'DELETE'
     })
     .then(response => {
       if (response.status === 204) {
-        showExercice();
+        showExercise();
       } else {
-        throw new Error(`Failed to delete Exercice with ID ${ExerciceId}`);
+        throw new Error(`Failed to delete Exercise with ID ${ExerciseId}`);
       }
     })
     .catch(error => {
