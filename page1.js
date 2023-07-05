@@ -1,19 +1,26 @@
-/* creation coachees inputs */
+/* creation Trainee inputs */
 let AddUserInput = document.getElementById('add-user-input');
 let UserListContainer = document.getElementById('user-container');
 let AddEmailInput =document.getElementById("add-email-input")
 let AddPassInput =document.getElementById("add-password-input")
 /* header of the page */
-let header = document.querySelector('#page2 header');
+let pageOneTitle = document.querySelector('#page1-title');
+let pageTwoTitle = document.querySelector('#page2-title');
 let activeUser = null;
+/* pages */
+let page1 = document.querySelector('#page1');
+let page2 = document.querySelector('#page2');
+let page3 = document.querySelector('#page3');
 
 document.querySelector('#add-user-btn').addEventListener("click",addUser);
 /* logout button functionality implementation */
 document.querySelectorAll('.logout').forEach(el => {
   el.addEventListener('click',function (e) {
-      EmailInput.value=""
-      el.parentElement.classList.add('hidden');
-      loginPage.classList.remove('hidden')
+        EmailInput.value=""
+        page1.classList.add('hidden')
+        page2.classList.add('hidden')
+        page3.classList.add('hidden')
+        loginPage.classList.remove('hidden')
   });
 });
 
@@ -29,13 +36,14 @@ function CreateMyElement(tagName, textContent = "", className = "") {
 
 function showUsers() {
   UserListContainer.innerHTML = '';
+  pageOneTitle.innerHTML = currentUser.name;
 
   fetch(`http://localhost:8000/users/${currentUser.id}`)
     .then(response => response.json())
   
     .then(users => {
        if (users.message){
-      let phrase = CreateMyElement('h1',"No Coachee Found ","phrase")
+      let phrase = CreateMyElement('h1',"No Members Found ","phrase")
       UserListContainer.appendChild(phrase)
      }
      else{ 
@@ -125,9 +133,9 @@ function toggleDivs(userId) {
    
       page1.classList.add('hidden');
       page2.classList.remove('hidden');
-      header.textContent = activeUser.name
+      pageTwoTitle.innerHTML = activeUser.name
       
-      showExercice();
+      showExercise();
     })
     .catch(error => {
       console.error(error);
@@ -136,5 +144,3 @@ function toggleDivs(userId) {
 
 
 
-
-  
