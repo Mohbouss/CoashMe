@@ -1,10 +1,11 @@
 # CoachMe App
 
-CoachMe is an application designed to facilitate coaching sessions between coaches and coachees. It provides a login page for coach and coachee authentication, a signup page for coaches, and various features for managing coachees and their tasks.
+CoachMe is an application designed to facilitate coaching sessions between coaches and coachees. It provides a login page for coach and coachee authentication, a signup page for coaches, and various features for managing coachees and their Exercices.
 
 ## Table of Contents
 - [Project Description](#project-description)
 - [Usage](#usage)
+- [Contributing](#contributing)
 
 
 ## Project Description
@@ -22,3 +23,14 @@ To use CoachMe, follow these steps:
 2. If you're a new coach, navigate to the signup page and create your account.
 3. Once logged in as a coach, access the coaches' page to manage coachees. Add new coachees by clicking "Add New Member" and providing their credentials. Delete coachees by hovering over the member container and clicking the delete button.
 4. As a coachee, log in using your email and password to access your personalized page. Here, you can view the exercises assigned by your coach and mark them as done or not done.
+
+
+## Contributing
+Contributions to enhance the TodoList web application are welcome. To contribute, please follow these steps:
+
+1. Fork the repository and clone it to your local machine.
+2. Create a new branch for your feature or bug fix.
+3. Make the necessary changes and test thoroughly.
+4. Commit your changes and push the branch to your forked repository.
+5. Submit a pull request, detailing the changes you made and their significance.
+
