@@ -35,15 +35,16 @@ Contributions to enhance the TodoList web application are welcome. To contribute
 5. Submit a pull request, detailing the changes you made and their significance.
 ## Screenshots 
 ### Register Page 
-![register](https://github.com/Mohbouss/CoashMe/assets/72497217/19889c9a-12bc-4520-940f-edf738b066bf)
+![register](https://github.com/Mohbouss/CoashMe/assets/72497217/a2114702-6995-4221-b303-aba8a6712a01)
 ### Login page
-![login](https://github.com/Mohbouss/CoashMe/assets/72497217/a907fbf6-1e38-4d29-8594-0b34222da8c0)
+![login](https://github.com/Mohbouss/CoashMe/assets/72497217/d08cd272-4cca-4329-a0cc-2fc3ab81b0b4)
 ### Trainer members page 
-![admin members page](https://github.com/Mohbouss/CoashMe/assets/72497217/fb59e722-9cd1-4a64-a49d-9408be9cfa4e)
+![admin members page](https://github.com/Mohbouss/CoashMe/assets/72497217/a5308c83-beca-41f2-8e3e-4d079b177b7d)
 ### Trainer exercises page
-![admin exercices page](https://github.com/Mohbouss/CoashMe/assets/72497217/2cc5549d-95db-4e79-84a4-48d09c7b7408)
+![admin exercices page](https://github.com/Mohbouss/CoashMe/assets/72497217/ef7c87b2-1429-427c-8815-311533581245)
 ### Members page
-![member page](https://github.com/Mohbouss/CoashMe/assets/72497217/6f0969af-6f89-4273-a763-8f8624ad2243)
+![member page](https://github.com/Mohbouss/CoashMe/assets/72497217/f31e9195-0f94-422a-a697-ebc0b03adae0)
+
 
 
 
